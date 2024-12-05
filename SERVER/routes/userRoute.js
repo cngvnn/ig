@@ -25,6 +25,7 @@ userRoute.get("/user/posts", async (req, res) => {
       .populate("post", "postImg description");
     res.send(respo);
   } catch (error) {
+    res.status(403).send(error);
     console.log("errrrrrrooorrr");
   }
 });
